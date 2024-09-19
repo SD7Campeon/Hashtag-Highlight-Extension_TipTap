@@ -1,1 +1,20 @@
+$primary-color: #1da1f2;
+$highlight-color: gold;
+$background-color: #f9f9f9;
+$border-color: #ddd;
 
+.editor-container {
+  background-color: $background-color;
+  border: 1px solid $border-color;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+span[data-hashtag] {
+  cursor: pointer;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: darkorange;
+  }
+}
