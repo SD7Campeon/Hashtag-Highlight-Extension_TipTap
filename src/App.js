@@ -50,3 +50,19 @@ const TiptapEditor = () => {
 };
 
 export default TiptapEditor;
+//Custom Keyboard Shortcuts
+//Allow users to insert popular hashtags using custom keyboard shortcuts (e.g., Cmd + 1 for #React, Cmd + 2 for #JavaScript).
+useEffect(() => {
+  const handleKeydown = (event) => {
+    if (event.metaKey && event.key === '1') {
+      addHashtag('React');
+    } else if (event.metaKey && event.key === '2') {
+      addHashtag('JavaScript');
+    }
+  };
+
+  window.addEventListener('keydown', handleKeydown);
+
+  return () => window.removeEventListener('keydown', handleKeydown);
+}, [editor]);
+
