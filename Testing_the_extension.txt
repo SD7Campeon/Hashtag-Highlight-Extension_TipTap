@@ -1,0 +1,2 @@
+Popular Hashtags: When users type popular hashtags from the JSON file (e.g., #React, #JavaScript, #TipTap), they should appear in gold and bold.
+Other Hashtags: Any other hashtags should appear in blue with normal font weight.
