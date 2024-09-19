@@ -1,0 +1,5 @@
+Context: Manages and provides popular hashtags across the app.
+Extension: Parses and styles hashtags in the TipTap editor.
+App Component: Integrates the extension, adds hashtags, and handles keyboard shortcuts.
+SCSS: Provides styles and theming.
+Unit Tests: Verifies the functionality of the extension.
