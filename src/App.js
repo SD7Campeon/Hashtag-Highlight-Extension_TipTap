@@ -1,18 +1,12 @@
-// src/App.js
-import React, { useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import { useEditor, EditorContent } from '@tiptap/react';
 import { StarterKit } from '@tiptap/starter-kit';
 import Hashtag from './extensions/Hashtag';
+import { HashtagContext } from './context/HashtagContext';
 import './App.scss';
-import hashtagsData from './data/hashtags.json';
 
 const TiptapEditor = () => {
-  const [popularHashtags, setPopularHashtags] = useState([]);
-
-  useEffect(() => {
-    // Fetching hashtags from the JSON file
-    setPopularHashtags(hashtagsData.popularHashtags);
-  }, []);
+  const { popularHashtags } = useContext(HashtagContext);
 
   const editor = useEditor({
     extensions: [
@@ -34,12 +28,23 @@ const TiptapEditor = () => {
         },
       }),
     ],
-    content: '<p>Type hashtags like #React, #JavaScript, or #TipTap.</p>',
+    content: '<p>Start typing #hashtags!</p>',
   });
+
+  const addHashtag = (hashtag) => {
+    editor.chain().focus().insertContent(`#${hashtag} `).run();
+  };
 
   return (
     <div className="editor-container">
       <EditorContent editor={editor} />
+      <div className="hashtag-buttons">
+        {popularHashtags.map((hashtag) => (
+          <button key={hashtag} onClick={() => addHashtag(hashtag)}>
+            {hashtag}
+          </button>
+        ))}
+      </div>
     </div>
   );
 };
