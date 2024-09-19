@@ -1,0 +1,4 @@
+npx create-react-app tiptap-hashtag-editor
+cd tiptap-hashtag-editor
+npm install @tiptap/react @tiptap/core @tiptap/extension-paragraph
+npm install sass
