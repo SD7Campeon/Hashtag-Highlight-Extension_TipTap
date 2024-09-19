@@ -1,0 +1,17 @@
+.editor-container {
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  max-width: 600px;
+  margin: 20px auto;
+
+  span[data-hashtag] {
+    cursor: pointer;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: darkorange;
+    }
+  }
+}
